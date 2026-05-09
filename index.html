@@ -1327,6 +1327,10 @@
       margin-bottom: 14px
     }
 
+    .modal-row.col-3 {
+      grid-template-columns: 1fr 1fr 1fr
+    }
+
     .modal-row.col-2 {
       grid-template-columns: 1fr 1fr
     }
@@ -1585,6 +1589,13 @@
         width: 100%;
         justify-content: center;
       }
+      .drawer {
+        width: 98vw;
+        max-height: 95vh;
+      }
+      .modal-row.col-3 {
+        grid-template-columns: 1fr 1fr !important;
+      }
 
       /* Items table: card layout on mobile */
       table.items-tbl {
@@ -1698,6 +1709,24 @@
       }
       .summary-table tr td {
         font-size: 12px;
+      }
+      .drawer {
+        width: 100vw !important;
+        max-height: 100vh !important;
+        border-radius: 0 !important;
+      }
+      .modal-row.col-3,
+      .modal-row.col-2 {
+        grid-template-columns: 1fr !important;
+      }
+      .drawer-body {
+        padding: 14px;
+      }
+      .drawer-header {
+        padding: 12px 14px;
+      }
+      .drawer-footer {
+        padding: 10px 14px;
       }
     }
   </style>
@@ -2493,7 +2522,7 @@
       <div class="drawer-body">
 
 
-        <div class="modal-row" style="grid-template-columns:1fr 1fr 1fr;display:grid;gap:14px;margin-bottom:14px">
+        <div class="modal-row col-3">
           <div>
             <label class="form-label">Customer Name <span class="req-dot">*</span></label>
             <input class="form-control" id="nc_company" type="text" placeholder="Enter Name">
@@ -2509,7 +2538,7 @@
         </div>
 
 
-        <div class="modal-row" style="grid-template-columns:1fr 1fr 1fr;display:grid;gap:14px;margin-bottom:14px">
+        <div class="modal-row col-3">
           <div>
             <label class="form-label">Address</label>
             <textarea class="form-control" id="nc_address" rows="4" placeholder="Enter Address"
@@ -2547,7 +2576,7 @@
         </div>
 
 
-        <div class="modal-row" style="grid-template-columns:1fr 1fr 1fr;display:grid;gap:14px;margin-bottom:14px">
+        <div class="modal-row col-3">
           <div>
             <label class="form-label">Customer State <span class="req-dot">*</span></label>
             <select class="form-select" id="nc_state">
@@ -2599,7 +2628,7 @@
         </div>
 
 
-        <div class="modal-row" style="grid-template-columns:1fr 1fr 1fr;display:grid;gap:14px;margin-bottom:14px">
+        <div class="modal-row col-3">
           <div>
             <label class="form-label">Birthday</label>
             <input class="form-control" id="nc_birthday" type="date" placeholder="Select Date">
@@ -2615,7 +2644,7 @@
         </div>
 
 
-        <div class="modal-row" style="grid-template-columns:1fr 1fr;display:grid;gap:14px;margin-bottom:0">
+        <div class="modal-row col-2">
           <div>
             <label class="form-label">Other Details</label>
             <input class="form-control" id="nc_other_details" type="text" placeholder="Enter Details">
