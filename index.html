@@ -2504,7 +2504,7 @@
           </div>
           <div>
             <label class="form-label">Reg. Contact No. <span class="req-dot">*</span></label>
-            <input class="form-control" id="nc_mobile" type="tel" placeholder="Enter Contact Number">
+            <input class="form-control" id="nc_mobile" type="tel" placeholder="Enter 10-digit Number" maxlength="10" pattern="[0-9]{10}" inputmode="numeric" oninput="this.value=this.value.replace(/\D/g,'').slice(0,10)">
           </div>
         </div>
 
@@ -2594,7 +2594,7 @@
           </div>
           <div>
             <label class="form-label">Contact Person No.</label>
-            <input class="form-control" id="nc_contact_person_no" type="tel" placeholder="Enter Contact Person No.">
+            <input class="form-control" id="nc_contact_person_no" type="tel" placeholder="Enter 10-digit Number" maxlength="10" pattern="[0-9]{10}" inputmode="numeric" oninput="this.value=this.value.replace(/\D/g,'').slice(0,10)">
           </div>
         </div>
 
@@ -2672,7 +2672,7 @@
             </div>
             <div>
               <label class="form-label">Contact No.</label>
-              <input class="form-control" id="ship_contact_input" type="tel" placeholder="Contact number">
+              <input class="form-control" id="ship_contact_input" type="tel" placeholder="Enter 10-digit Number" maxlength="10" pattern="[0-9]{10}" inputmode="numeric" oninput="this.value=this.value.replace(/\D/g,'').slice(0,10)">
             </div>
           </div>
         </div>
@@ -2753,6 +2753,7 @@
         if (!company) { showToast('Required', 'Customer Name is required.', 'error'); highlightError('nc_company'); return; }
         if (!alias) { showToast('Required', 'Alias Name is required.', 'error'); highlightError('nc_alias'); return; }
         if (!mobile) { showToast('Required', 'Reg. Contact No. is required.', 'error'); highlightError('nc_mobile'); return; }
+        if (!/^[0-9]{10}$/.test(mobile)) { showToast('Invalid', 'Contact No. must be exactly 10 digits.', 'error'); highlightError('nc_mobile'); return; }
         if (!area) { showToast('Required', 'Please select Area.', 'error'); highlightError('nc_area'); return; }
         if (!city) { showToast('Required', 'Please select City.', 'error'); highlightError('nc_city'); return; }
         if (!gstType) { showToast('Required', 'Please select GST Type.', 'error'); highlightError('nc_gst_type'); return; }
